@@ -11,4 +11,4 @@ class MapAdmin(admin.ModelAdmin):
 admin.site.register(Map)
 admin.site.register(User)
 admin.site.register(Legislation)
-admin.site.register(MapAdmin)
+# admin.site.register(MapAdmin)
