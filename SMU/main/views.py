@@ -16,7 +16,7 @@ class Home(APIView):
     def get(self, request):
         queryset = User.objects.all()
         return Response({'user': queryset})
-        
+
 class Profile(APIView):
     renderer_classes = [TemplateHTMLRenderer]
     template_name = 'pages/profile.html'
@@ -24,3 +24,15 @@ class Profile(APIView):
     def get(self, request):
         user = User.objects.all()
         return Response({'user': user})
+
+    def post(self):
+        if (request.method == 'POST'):
+            form = NameForm(request.POST)
+            if form.is_valid():
+                #process the data and use data to make api call
+                #redirect to a new url
+                return HttpResponseRedirect('/thanks')
+        else:
+            form = Nameform()
+        return render(request, 'name.html', {'form': form})
+
