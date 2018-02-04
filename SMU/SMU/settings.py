@@ -57,7 +57,7 @@ ROOT_URLCONF = 'SMU.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['SMU/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
